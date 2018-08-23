@@ -9,16 +9,43 @@ $("#textBoxSubButton").click(function () {
     let createDiv = $("<div></div>"); //$ same as document.createElement("div")
     $("body").append(createDiv);
 
-    let createH2 = $(`<h2>${textBox}</h2>`);
-    (createDiv).append(createH2);
+    let createUl = $("<ul></ul>"); //$ same as document.createElement(element)
+    $("body").append(createUl);
 
-    $("h2")
-        .on("mouseover", function () {
+    let createLi = $(`<li>${textBox}</li>`);
+    (createUl).append(createLi);
+
+    $("li")
+     .click( function () {
             $(this).css({
-                "background-color": "blue",
-                "border-radius": "50px 20px"
+                "color": "blue",
             });
         });
+    
+    $("li")
+    .dblclick(function () {
+        $(this).remove()
+        let whatIsThis = $(this);
+        console.log(whatIsThis);
+    });
+
+
+
+
+
+
+
+
+    // let createH2 = $(`<h2>${textBox}</h2>`);
+    // (createDiv).append(createH2);
+
+    // $("h2")
+    //     .on("mouseover", function () {
+    //         $(this).css({
+    //             "background-color": "blue",
+    //             "border-radius": "50px 20px"
+    //         });
+    //     });
 });
 
 $("#allInputs").keyup(function () {
@@ -28,6 +55,7 @@ $("#allInputs").keyup(function () {
         $(".enableOn").prop("disabled", false);
     }
 });
+
 
 
 
