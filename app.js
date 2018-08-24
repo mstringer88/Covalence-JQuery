@@ -15,14 +15,15 @@ $("#textBoxSubButton").click(function () {
     let createLi = $(`<li>${textBox}</li>`);
     (createUl).append(createLi);
 
-    $("li")
-     .click( function () {
-            $(this).css({
-                "color": "blue",
-            });
-        });
-    
-    $("li")
+    $(createLi).click(function () {
+        let colors = ["blue", "green", "red", "orange", "yellow"];
+        let ranColor = colors[Math.floor(Math.random() * colors.length)];
+        $(createLi).css({"color": ranColor});
+        console.log(ranColor);
+    });
+});
+
+$("li")
     .dblclick(function () {
         $(this).remove()
         let whatIsThis = $(this);
@@ -30,23 +31,17 @@ $("#textBoxSubButton").click(function () {
     });
 
 
+// let createH2 = $(`<h2>${textBox}</h2>`);
+// (createDiv).append(createH2);
 
+// $("h2")
+//     .on("mouseover", function () {
+//         $(this).css({
+//             "background-color": "blue",
+//             "border-radius": "50px 20px"
+//         });
+//     });
 
-
-
-
-
-    // let createH2 = $(`<h2>${textBox}</h2>`);
-    // (createDiv).append(createH2);
-
-    // $("h2")
-    //     .on("mouseover", function () {
-    //         $(this).css({
-    //             "background-color": "blue",
-    //             "border-radius": "50px 20px"
-    //         });
-    //     });
-});
 
 $("#allInputs").keyup(function () {
     if ($("input[type*='submit']").val() == "") {
